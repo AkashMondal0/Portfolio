@@ -3,7 +3,7 @@ import OrbitingCircles from "@/components/magicui/orbiting-circles";
 export default function OrbitingCirclesComponent() {
     return (
       <div className="w-max flex justify-center items-center">
-        <div className="relative flex h-[500px] w-[32rem] flex-col items-center justify-center
+        <div className="relative flex aspect-square h-60 w-60 flex-col items-center justify-center
          overflow-hidden rounded-lg bg-background">
         <span className="pointer-events-none whitespace-pre-wrap
          text-center text-4xl font-semibold leading-none text-transparent

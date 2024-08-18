@@ -1,38 +1,56 @@
 "use client";
+import { cn } from "@/lib/utils";
+import AnimatedShinyText from "./magicui/animated-shiny-text";
 import WordPullUp from "./magicui/word-pull-up";
 import { TracingBeam } from "./ui/tracing-beam";
+import { ArrowRightIcon, Github } from "lucide-react";
 
 export function TracingBeamComponent() {
   return (
-    <div className="px-2 mt-5">
+    <div className="px-2">
       <div>
-      <WordPullUp
-      className="text-4xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem]"
-      words="Projects"/>
+        <WordPullUp
+          className="text-4xl mb-5 font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem]"
+          words="Projects" />
       </div>
       <TracingBeam className="px-6">
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+        <div className="max-w-2xl mx-auto antialiased py-2 relative pl-2">
           {dummyContent.map((item, index) => (
-            <div key={`content-${index}`} className="mb-10">
-              <h2 className="text-black bg-white rounded-full text-sm w-fit px-4 py-1 border">
-                {item.badge}
-              </h2>
-              <h1 className="text-4xl text-transparent my-2
-            text-neutral-800 font-sans font-bold">
+            <div key={`content-${index}`} 
+            className={cn(index + 1 === dummyContent.length ? "" : "border-b", "my-5")}>
+              <h1 className="text-2xl text-transparent my-1 text-white font-sans font-bold">
                 {item.title}
               </h1>
-
-              <div className="text-sm  prose prose-sm dark:prose-invert">
+              <h2 className="text-black bg-white rounded-full text-sm w-fit px-4 my-2 py-1 border">
+                {item.badge}
+              </h2>
+              <div className="text-sm prose prose-sm dark:prose-invert">
                 {item?.image && (
                   <img
                     src={item.image}
                     alt="blog thumbnail"
                     height="1000"
                     width="1000"
-                    className="rounded-lg mb-10 object-cover userNotSelectImg"
+                    className="rounded-lg object-cover userNotSelectImg"
                   />
                 )}
+                <div className="h-5" />
                 {item.description}
+                <a
+                  target="_blank"
+                  href={item.link}
+                  className="z-10 flex items-center justify-center w-max my-4">
+                  <div
+                    className={cn(
+                      "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+                    )}
+                  >
+                    <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 gap-2">
+                      <Github /> <span> Github Repository</span>
+                      <ArrowRightIcon className="mx-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                    </AnimatedShinyText>
+                  </div>
+                </a>
               </div>
             </div>
           ))}
@@ -44,7 +62,7 @@ export function TracingBeamComponent() {
 
 const dummyContent = [
   {
-    title: "SkyLight App",
+    title: "SkyLight",
     description: (
       <>
         <p>
@@ -58,7 +76,7 @@ const dummyContent = [
         </div>
         <div>
           <h1 className="text-xl text-transparent my-2
-            text-neutral-800 font-sans font-bold">Features</h1>
+            text-white font-sans font-bold">Features</h1>
           <ul className="list-disc mx-5">
             <li>User authentication with JWT and NextAuth.js</li>
             <li>Real-time chat using Socket io</li>
@@ -73,9 +91,10 @@ const dummyContent = [
     badge: "Next.js, NestJS",
     image:
       "/assets/app/mobile.png",
+    link: "https://github.com/AkashMondal0/Skylight.git",
   },
   {
-    title: "Sky Chat, Android App",
+    title: "Sky Chat",
     description: (
       <>
         <p>
@@ -83,7 +102,7 @@ const dummyContent = [
         </p>
         <div>
           <h1 className="text-xl text-transparent my-2
-            text-neutral-800 font-sans font-bold">Features</h1>
+            text-white font-sans font-bold">Features</h1>
           <ul className="list-disc mx-5">
             <li>User authentication with JWT and bcrypt</li>
             <li>Real-time chat using Socket io</li>
@@ -97,5 +116,6 @@ const dummyContent = [
     badge: "React Native, Nodejs",
     image:
       "/assets/app/sky chat.png",
-  }
+    link: "https://github.com/AkashMondal0/Sky-Chat-App-Expo.git",
+  },
 ];

@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="mt-2 md:mt-0">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-full">
-                <img src="/assets/app/akash.jpeg" alt="avatar" className="w-full h-full rounded-full object-cover" />
+                <img src="/assets/app/akash.jpg" alt="avatar" className="w-full h-full rounded-full object-cover" />
               </div>
-              <h1 className="text-xl font-bold">akash2003mondal@gmail.com</h1>
+              <h1 className="font-bold">akash2003mondal@gmail.com</h1>
 
             </div>
           </div>
