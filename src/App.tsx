@@ -15,16 +15,16 @@ export default function App() {
         <Hero />
       </section>
       <section id="about">
-        <div className="flex justify-center flex-wrap gap-5">
-          <TextRevealComponent />
-        </div>
+        <TextRevealComponent />
       </section>
       <section id="projects">
         <TracingBeamComponent />
       </section>
       <section id="skills">
-        <IconCloudComponent />
         <MarqueeComponent />
+      </section>
+      <section id="tools">
+        <IconCloudComponent />
       </section>
       <section id="contact">
         <Contact />

@@ -90,7 +90,7 @@ const dummyContent = [
     ),
     badge: "Next.js, NestJS",
     image:
-      "/assets/app/mobile.png",
+      "/assets/app/mobile.jpg",
     link: "https://github.com/AkashMondal0/Skylight.git",
   },
   {
@@ -115,7 +115,7 @@ const dummyContent = [
     ),
     badge: "React Native, Nodejs",
     image:
-      "/assets/app/sky chat.png",
+      "/assets/app/sky chat.jpg",
     link: "https://github.com/AkashMondal0/Sky-Chat-App-Expo.git",
   },
 ];
